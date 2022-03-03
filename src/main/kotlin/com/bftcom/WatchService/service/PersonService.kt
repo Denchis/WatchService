@@ -7,4 +7,7 @@ interface PersonService {
 
     fun create(person: Person): Int
 
+    fun findByNameAndLastName(name: String, lastName: String): Person?
+
+    fun deleteAll()
 }

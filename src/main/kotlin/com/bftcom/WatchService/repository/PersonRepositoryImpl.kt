@@ -42,6 +42,15 @@ class PersonRepositoryImpl(
         return keyHolder.keys?.getValue("id") as Int
     }
 
+    override fun deleteAll() {
+        val id: Int = 0
+        jdbcTemplate.update("delete from Person",
+            mapOf(
+                "id" to id,
+            )
+        )
+    }
+
 
     companion object {
         val ROW_MAPPER = RowMapper<Person> { rs, _ ->

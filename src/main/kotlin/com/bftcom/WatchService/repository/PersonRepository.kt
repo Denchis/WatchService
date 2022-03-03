@@ -8,4 +8,6 @@ interface PersonRepository {
     fun findByNameAndLastName(name: String, lastName: String): Person?
 
     fun create(name: String, lastName: String):Int
+
+    fun deleteAll()
 }
