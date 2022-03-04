@@ -14,6 +14,16 @@ internal class PersonRepositoryImplTest {
     lateinit var personRepository: PersonRepository
 
     @Test
+    fun create() {
+        personRepository.deleteAll()
+        val id: Int = personRepository.create("Grisha","Gruzd")
+        val person:Person? = personRepository.findByNameAndLastName("Grisha","Gruzd")
+        assertEquals(id,person?.id)
+        assertEquals("Grisha", person?.name)
+        assertEquals("Gruzd", person?.lastName)
+    }
+
+    @Test
     fun getAll() {
         personRepository.deleteAll()
         val id: Int = personRepository.create("Grisha","Gruzd")
@@ -28,15 +38,6 @@ internal class PersonRepositoryImplTest {
         val id: Int = personRepository.create("Grisha","Gruzd")
         val person: Person? = personRepository.findByNameAndLastName("Grisha","Gruzd")
         assertNotNull(person)
-        assertEquals(id,person?.id)
-        assertEquals("Grisha", person?.name)
-        assertEquals("Gruzd", person?.lastName)
-    }
-
-    @Test
-    fun create() {
-        val id: Int = personRepository.create("Grisha","Gruzd")
-        val person:Person? = personRepository.findByNameAndLastName("Grisha","Gruzd")
         assertEquals(id,person?.id)
         assertEquals("Grisha", person?.name)
         assertEquals("Gruzd", person?.lastName)

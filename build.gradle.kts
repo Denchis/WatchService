@@ -26,7 +26,7 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("com.ninja-squad:springmockk:3.1.1")
-	//implementation("com.google.code.gson:gson:2.8.6")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
 	implementation("com.beust:klaxon:5.5")
 }
 
